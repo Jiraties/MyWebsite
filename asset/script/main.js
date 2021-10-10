@@ -1,3 +1,5 @@
+// Co-audited by Prawich Thawansakdivudhi on Java Script Complex Code
+
 const hero = document.querySelector('.hero');
 const slider = document.querySelector('.slider');
 const logo = document.querySelector('.logo');
