@@ -17,6 +17,10 @@ body {
     z-index: -1;
 }
 
+.active {
+    transform: scale(3);
+}
+
 nav {
     display: grid;
     grid-template-columns: 10% 1fr 1fr 10%;
@@ -25,7 +29,7 @@ nav {
     align-items: center;
 }
 
-#logo {
+.logo {
     grid-column: 2/3;
     font-size: 24px;
     font-family: 'JetBrains Mono', monospace;;
