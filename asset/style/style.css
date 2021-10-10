@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    height: 10000px;
+}
+
 .slider {
     position: absolute;
     top: 0;
