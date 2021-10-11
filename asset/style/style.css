@@ -13,12 +13,8 @@ body {
     top: 0;
     width: 100%;
     height: 100vh;
-    background:linear-gradient(to bottom right,#b8d4ff, #8db8fc );
+    background:linear-gradient(to bottom right,#52ff5d, #fce37e );
     z-index: -1;
-}
-
-.active {
-    transform: scale(3);
 }
 
 nav {
@@ -80,3 +76,7 @@ section {
     opacity: 0.1;
     top: 0;
 }
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+  }
