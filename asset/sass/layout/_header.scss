@@ -1,0 +1,29 @@
+.header {
+    background-image: linear-gradient(225deg, #fa8142, #ff4088 ) ;
+    display: block;
+    height: 80vh;
+    width: 100%;
+    -webkit-animation: Rainbow 15s ease infinite;
+    -moz-animation: Rainbow 15s ease infinite;
+    animation: Rainbow 15s ease infinite;
+    box-sizing: border-box;
+    background-size: 300% 300%;
+
+    position: absolute;
+    top:0;
+
+    &__text {
+        margin-left: 5% ;
+        margin-top: 10%;
+
+        line-height: 11rem;
+    }
+}
+.container {
+    background: linear-gradient();
+    
+    
+    display: table;
+    height: 100vh;
+    position: relative;
+  }

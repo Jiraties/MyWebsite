@@ -1,0 +1,25 @@
+// npm run compile:sass
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
+
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/works";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/navigation";
+
+@import "pages/home";
+
+
+
+
+
