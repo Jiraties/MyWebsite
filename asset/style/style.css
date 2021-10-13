@@ -23,25 +23,25 @@ body {
   background-color: #333333; }
 
 h1 {
-  font-family: 'Inter', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: 10rem;
   color: #fff; }
 
 h3 {
-  font-family: 'Inter', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 3rem;
   color: #fff; }
 
 h2 {
-  font-family: 'Inter', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: 5rem;
   color: #fff; }
 
 p {
-  font-family: 'Inter', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 2rem;
   color: #fff; }
