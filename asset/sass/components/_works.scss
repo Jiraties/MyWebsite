@@ -66,13 +66,8 @@
             border-radius: 15px;
         }
 
-        &:hover {
-            transform: scale(1.05);
-        }
-
-        &:active {
-            transform: scale(.9);
-        }
+        @include jellyEffect;
+        
     }
 
     &__2 {
@@ -92,14 +87,7 @@
             z-index: 5;
         }
 
-        &:hover {
-            transform: scale(1.05);
-            box-shadow: $jira-gray-1;
-        }
-
-        &:active {
-            transform: scale(.9);
-        }
+        @include jellyEffect;
     }
 
     &__3 {
