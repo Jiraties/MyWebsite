@@ -1,13 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap");
-@-webkit-keyframes Rainbow {
-  0% {
-    background-position: 94% 0%; }
-  50% {
-    background-position: 7% 100%; }
-  100% {
-    background-position: 94% 0%; } }
-
 *,
 *::after,
 *::before {
@@ -71,12 +63,12 @@ p {
     .works__main p {
       padding-bottom: 2.5rem; }
     .works__main img {
-      height: 35rem;
+      height: 65%;
       width: 80%;
       background-size: cover;
       border-radius: 15px; }
     .works__main:hover {
-      transform: scale(1.03);
+      transform: scale(1.02);
       box-shadow: #4d4d4d; }
     .works__main:active {
       transform: scale(0.9); }
@@ -92,7 +84,7 @@ p {
       background-size: cover;
       border-radius: 15px; }
     .works__1:hover {
-      transform: scale(1.05);
+      transform: scale(1.04);
       box-shadow: #4d4d4d; }
     .works__1:active {
       transform: scale(0.9); }
@@ -108,7 +100,7 @@ p {
       border-radius: 15px;
       z-index: 5; }
     .works__2:hover {
-      transform: scale(1.05);
+      transform: scale(1.04);
       box-shadow: #4d4d4d; }
     .works__2:active {
       transform: scale(0.9); }
@@ -121,22 +113,10 @@ p {
     background-color: #4d4d4d;
     border-radius: 11px; }
 
-.about {
-  height: 100vh; }
-  .about img {
-    height: 100vh; }
-  .about h1 {
-    font-size: 5rem; }
-  .about__content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 2rem 0 0 5rem; }
-
 .header {
   background-color: #ff4088;
   display: block;
-  height: 70vh;
+  height: 60vh;
   width: 100%;
   box-sizing: border-box;
   position: absolute;
