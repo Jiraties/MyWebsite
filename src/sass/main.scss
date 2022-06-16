@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+// Boxicons
+@import url("https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css");
+
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/knowingMe";
+@import "components/dialog";
+@import "components/technologies";
+
+@import "layout/header";
+@import "layout/footer";
+
+// @import "lib/simpleModal";
+
+@import "pages/home";

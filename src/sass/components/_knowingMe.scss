@@ -1,0 +1,53 @@
+.knowingMe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 40rem;
+  gap: 3rem;
+  margin-right: -10vw;
+
+  &__text {
+    p {
+      font-size: 1.7rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__images {
+    display: flex;
+    gap: 2rem;
+    overflow: hidden;
+
+    img {
+      border-radius: 3rem;
+      height: 40rem;
+      width: 30rem;
+      object-fit: cover;
+      transition: all 0.2s;
+    }
+  }
+
+  &__chips {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__chip {
+    transition: all 0.2s;
+    padding: 2rem;
+    background-color: var(--light-1);
+    border-radius: 10rem;
+
+    div {
+      display: flex;
+      gap: 1rem;
+      font-size: 2rem;
+      font-weight: 700;
+      height: 2.5rem;
+      justify-content: center;
+    }
+
+    &:hover {
+      background-color: var(--primary-blue);
+    }
+  }
+}
