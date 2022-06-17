@@ -10,8 +10,17 @@
   :root {
     --primary-blue: #4f80ff;
     --light-1: #2e2f3d;
+    --light-2: #373852;
     --background: #262732;
     --font: #fff; } }
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary-blue: #4f80ff;
+    --light-1: #d5d6ec;
+    --light-2: #adb1e2;
+    --background: #e2e3f5;
+    --font: #000; } }
 
 @keyframes rotation {
   from {
@@ -27,8 +36,14 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%;
+  font-size: 55%;
   scroll-behavior: smooth; }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 62.5%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 60%; } }
 
 body {
   box-sizing: border-box;
@@ -105,7 +120,8 @@ strong {
       height: 2.5rem;
       justify-content: center; }
     .knowingMe__chip:hover {
-      background-color: var(--primary-blue); }
+      background-color: var(--primary-blue);
+      color: #fff; }
 
 .infoModal {
   position: fixed;
@@ -127,6 +143,27 @@ strong {
     .infoModal__main h3 {
       margin-bottom: 1rem; }
 
+.featuredPosts__container {
+  margin-top: 2rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem; }
+
+.featuredPosts__item {
+  border-radius: 3rem;
+  background-color: var(--light-1);
+  padding: 3rem;
+  height: 35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  .featuredPosts__item h3 {
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 5.5rem;
+    width: 80%; }
+
 .technologies p {
   margin-bottom: 2rem; }
 
@@ -143,12 +180,28 @@ strong {
   background-color: var(--light-1);
   border-radius: 3rem;
   height: 21rem;
-  transition: all 0.2s; }
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden; }
   .technologies__item h3 {
     font-size: 2.5rem;
-    line-height: 35px; }
+    line-height: 35px;
+    z-index: 2; }
   .technologies__item p {
-    font-size: 1.7rem; }
+    font-size: 1.7rem;
+    z-index: 2; }
+  .technologies__item i {
+    position: absolute;
+    bottom: -30%;
+    right: 0;
+    font-size: 25rem;
+    color: var(--light-2);
+    transition: all 0.2s; }
+  .technologies__item:hover > i {
+    color: #fff; }
+  .technologies__item:hover {
+    color: #fff;
+    background-color: var(--primary-blue); }
 
 .header__home {
   height: 80vh;

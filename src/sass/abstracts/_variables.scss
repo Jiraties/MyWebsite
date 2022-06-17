@@ -9,7 +9,18 @@
   :root {
     --primary-blue: #4f80ff;
     --light-1: #2e2f3d;
+    --light-2: #373852;
     --background: #262732;
     --font: #fff;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary-blue: #4f80ff;
+    --light-1: #d5d6ec;
+    --light-2: #adb1e2;
+    --background: #e2e3f5;
+    --font: #000;
   }
 }
