@@ -3,7 +3,6 @@
   grid-template-columns: 1fr 1fr;
   height: 40rem;
   gap: 3rem;
-  margin-right: -10vw;
 
   &__text {
     p {
@@ -19,8 +18,8 @@
 
     img {
       border-radius: 3rem;
-      height: 40rem;
-      width: 30rem;
+      width: 90%;
+      margin-left: auto;
       object-fit: cover;
       transition: all 0.2s;
     }

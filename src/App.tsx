@@ -1,9 +1,16 @@
 import Starter from "./components/Starter";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { modalActions } from "./context/modalSlice";
 import Modal from "@mui/material/Modal";
+
+//@ts-ignore
+import Me3 from "../assets/images/Me3.png";
+//@ts-ignore
+import Me1 from "../assets/images/Me1.png";
+//@ts-ignore
+import Me5 from "../assets/images/Me5.png";
 
 import "./sass/main.css";
 import Clock from "./components/Clock";
@@ -23,7 +30,21 @@ function App() {
     image: "",
     customComponent: <></>,
   });
-  const dispatch = useDispatch();
+  const [imageArray, setImageArray] = useState([Me3, Me1, Me5]);
+
+  // useEffect(() => {
+  //   const imageRandomizerInterval = setInterval(() => {
+  //     const shuffeled = imageArray.sort(() => {
+  //       const randomTrueOrFalse = Math.random() > 0.5;
+  //       return randomTrueOrFalse ? 1 : -1;
+  //     });
+  //     console.log(shuffeled);
+
+  //     setImageArray(shuffeled);
+  //   }, 2000);
+
+  //   return () => clearInterval(imageRandomizerInterval);
+  // }, []);
 
   return (
     <>
@@ -49,7 +70,16 @@ function App() {
           </div>
         </div>
       </Modal>
-      <header className="header__home">a</header>
+      <header className="header__home">
+        <h1>
+          Jirat <br />
+          Chutrakul<span className="dot">.</span>
+        </h1>
+        <div className="header__container">
+          <div className="header__box">a</div>
+          <div className="header__box">a</div>
+        </div>
+      </header>
       <main className="main__home">
         <section className="knowingMe">
           <div className="knowingMe__text">
@@ -101,18 +131,57 @@ function App() {
           </div>
 
           <div className="knowingMe__images">
-            <img
-              src="https://avatars.githubusercontent.com/u/87472782?v=4"
-              alt="photo of Jirat Chutrakul"
-            />
-            <img
-              src="https://www.colorhexa.com/2e2e3d.png"
-              alt="photo of Jirat Chutrakul"
-            />
-            <img
-              src="https://www.colorhexa.com/2e2e3d.png"
-              alt="photo of Jirat Chutrakul"
-            />
+            <img src={imageArray[0]} alt="photo of Jirat Chutrakul" />
+          </div>
+        </section>
+
+        <section className="projects">
+          <h1>
+            Projects I've worked on<span className="dot">.</span>
+          </h1>
+          <p>These projects are projects i’ve worked on</p>
+          <div className="projects__container">
+            <div className="projects__item">
+              <h3>
+                Timetables<span className="dot">.</span>
+                <p>
+                  Timetables is a web-based timetables program for a Simple,
+                  Customizable and Practical experience. Instead of needing to
+                  trace your finger on the timebar in your physical timetable,
+                  in Timetables simply just look at At a Glance and you
+                  instantly glimpse the current period and the following period.
+                </p>
+              </h3>
+              <a className="u-remove-a-eff projects__item--subButton">
+                <i className="bx bxl-github"></i>
+              </a>
+              <a
+                className="u-remove-a-eff projects__item--mainButton"
+                href="https://timetables.ssdevelopers.xyz"
+              >
+                Let's go
+              </a>
+            </div>
+
+            <div className="projects__item">
+              <h3>
+                System13<span className="dot">.</span>
+                <p>
+                  System13 is a web-application for doing manual Valorant fair
+                  team matchmaking. Using is as easy as inputting team member
+                  names.
+                </p>
+              </h3>
+              <a className="u-remove-a-eff projects__item--subButton">
+                <i className="bx bxl-github"></i>
+              </a>
+              <a
+                className="u-remove-a-eff projects__item--mainButton  projects__item--deprecated"
+                href="https://timetables.ssdevelopers.xyz"
+              >
+                Deprecated
+              </a>
+            </div>
           </div>
         </section>
 
@@ -205,6 +274,30 @@ function App() {
             </h3>
             <p>Version 3.0</p>
           </a>
+
+          <div className="footer__menus">
+            <div className="footer__item">
+              <h4>Contact Info</h4>
+              <p>
+                discord: jiraties_#6144 <br />
+                github: Jiraties
+                <br />
+                twitter: @saikaaawastaken
+              </p>
+            </div>
+            <div className="footer__item">
+              <h4>Relevant Sites</h4>
+              <a href="https://ssdevelopers.xyz" className="u-remove-a-eff">
+                Portals <br />
+              </a>
+              <a
+                href="https://timetables.ssdevelopers.xyz"
+                className="u-remove-a-eff"
+              >
+                Timetables
+              </a>
+            </div>
+          </div>
         </footer>
       </main>
     </>

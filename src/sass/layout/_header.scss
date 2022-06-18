@@ -3,5 +3,34 @@
     height: 80vh;
     background-color: var(--light-1);
     border-radius: 0 0 3rem 3rem;
+    padding: 4vw;
+    display: flex;
+
+    h1 {
+      line-height: 101%;
+      font-size: 10rem;
+      margin-top: auto;
+    }
+
+    p {
+      font-size: 3.5rem;
+      width: 60%;
+    }
+  }
+
+  &__container {
+    display: flex;
+    gap: 2rem;
+    height: 80%;
+    margin-top: auto;
+  }
+
+  &__box {
+    height: 100%;
+    margin-left: 4rem;
+    width: 40vw;
+    border-radius: 3rem;
+    padding: 2rem;
+    background-color: var(--dark-1);
   }
 }

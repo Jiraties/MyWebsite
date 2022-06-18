@@ -1,0 +1,58 @@
+.projects {
+  &__container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  &__item {
+    padding: 2.5rem;
+    background-color: var(--light-1);
+    border-radius: 3rem;
+    height: 35rem;
+    width: 70rem;
+    position: relative;
+
+    &--mainButton {
+      display: grid;
+      place-items: center;
+      width: 13rem;
+      height: 6rem;
+
+      border-radius: 10rem;
+      background-color: var(--primary-blue);
+      font-size: 1.5rem;
+      position: absolute;
+      bottom: 3rem;
+      right: 3rem;
+    }
+
+    &--subButton {
+      text-align: center;
+      padding: 1rem;
+      height: 6rem;
+      width: 6rem;
+      border-radius: 10rem;
+      background-color: transparent;
+      border: 1px solid #4d4f6f;
+      font-size: 3rem;
+      position: absolute;
+      bottom: 3rem;
+      left: 3rem;
+    }
+
+    &--deprecated {
+      background-color: #333948;
+      color: #838383;
+    }
+
+    h3 {
+      font-weight: 500;
+      font-size: 4rem;
+    }
+
+    p {
+      color: #dbdbdb;
+    }
+  }
+}
