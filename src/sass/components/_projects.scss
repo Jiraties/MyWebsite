@@ -3,6 +3,7 @@
     display: flex;
     gap: 2rem;
     margin-top: 2rem;
+    margin-bottom: 10rem;
   }
 
   &__item {
@@ -44,6 +45,7 @@
     &--deprecated {
       background-color: #333948;
       color: #838383;
+      cursor: no-drop;
     }
 
     h3 {

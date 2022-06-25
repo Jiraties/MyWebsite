@@ -1,6 +1,9 @@
 .featuredPosts {
+  p {
+    margin-bottom: 2rem;
+  }
+
   &__container {
-    margin-top: 2rem;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -21,6 +24,10 @@
       font-weight: 500;
       line-height: 5.5rem;
       width: 80%;
+    }
+
+    p {
+      margin-bottom: 0;
     }
   }
 }
