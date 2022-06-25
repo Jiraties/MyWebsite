@@ -26,6 +26,17 @@
       position: absolute;
       bottom: 3rem;
       right: 3rem;
+      transition: all 0.4s;
+
+      &:hover {
+        box-shadow: 0 0 2rem var(--primary-blue);
+        transform: translateY(-0.5rem);
+      }
+
+      &:active {
+        box-shadow: 0 0 1rem var(--primary-blue);
+        transform: translateY(0);
+      }
     }
 
     &--subButton {
@@ -40,12 +51,18 @@
       position: absolute;
       bottom: 3rem;
       left: 3rem;
+      transition: all 0.4s;
     }
 
     &--deprecated {
       background-color: #333948;
       color: #838383;
       cursor: no-drop;
+
+      &:hover {
+        box-shadow: none;
+        transform: translateY(0rem);
+      }
     }
 
     h3 {

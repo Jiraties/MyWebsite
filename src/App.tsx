@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Response from "./pages/Response";
 import "./sass/main.css";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/response" element={<Response />} />
       </Routes>
     </>
   );

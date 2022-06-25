@@ -21,15 +21,17 @@ interface modalInfoType {
 
 const Home = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [imageArray, setImageArray] = useState([Me3, Me1, Me5]);
   const [modalInfo, setModalInfo] = useState<modalInfoType>({
     title: "",
     text: "",
     image: "",
     customComponent: <></>,
   });
-
-  const headerRef = useRef(null);
-  const [imageArray, setImageArray] = useState([Me3, Me1, Me5]);
+  const headerTextVariants = {
+    hidden: { x: "-5vw", opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
   const navLinksArray = [
     {
       name: "Leave a Response",
@@ -63,7 +65,7 @@ const Home = () => {
           </div>
         </div>
       </Modal>
-      <header className="header__home" ref={headerRef}>
+      <header className="header__home">
         <motion.div
           initial={{ y: "5vh", opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -100,11 +102,55 @@ const Home = () => {
             );
           })}
         </div>
-        <h1>
-          Making
-          <br /> Everyday a bit <br /> better by <br />{" "}
-          <span className="dot">developing</span>
-        </h1>
+        <div className="header__textContainer">
+          <motion.h1
+            variants={headerTextVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              duration: 1,
+              ease: "anticipate",
+            }}
+          >
+            Making
+          </motion.h1>
+          <motion.h1
+            variants={headerTextVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              duration: 1,
+              ease: "anticipate",
+              delay: 0.1,
+            }}
+          >
+            everyday a bit
+          </motion.h1>
+          <motion.h1
+            variants={headerTextVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              duration: 1,
+              ease: "anticipate",
+              delay: 0.2,
+            }}
+          >
+            better by
+          </motion.h1>
+          <motion.h1
+            variants={headerTextVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              duration: 1,
+              ease: "anticipate",
+              delay: 0.3,
+            }}
+          >
+            <span className="dot">developing</span>
+          </motion.h1>
+        </div>
       </header>
       <main className="main__home">
         <section className="knowingMe">
@@ -180,6 +226,7 @@ const Home = () => {
               </h3>
               <a
                 href="https://github.com/SS-Developers/Timetables"
+                target="_blank"
                 className="u-remove-a-eff projects__item--subButton"
               >
                 <i className="bx bxl-github"></i>
@@ -202,6 +249,7 @@ const Home = () => {
                 </p>
               </h3>
               <a
+                target="_blank"
                 href="https://github.com/SS-Developers/System13"
                 className="u-remove-a-eff projects__item--subButton"
               >

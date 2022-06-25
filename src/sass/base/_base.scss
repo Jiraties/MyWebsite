@@ -39,4 +39,10 @@ body {
     gap: 2rem;
     padding: 5rem 5vw 0 5vw;
   }
+
+  &__response {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+  }
 }

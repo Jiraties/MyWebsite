@@ -63,6 +63,11 @@ body {
   gap: 2rem;
   padding: 5rem 5vw 0 5vw; }
 
+.main__response {
+  display: grid;
+  place-items: center;
+  height: 100vh; }
+
 h1 {
   color: var(--font);
   font-size: 4.5rem; }
@@ -234,7 +239,14 @@ strong {
     font-size: 1.5rem;
     position: absolute;
     bottom: 3rem;
-    right: 3rem; }
+    right: 3rem;
+    transition: all 0.4s; }
+    .projects__item--mainButton:hover {
+      box-shadow: 0 0 2rem var(--primary-blue);
+      transform: translateY(-0.5rem); }
+    .projects__item--mainButton:active {
+      box-shadow: 0 0 1rem var(--primary-blue);
+      transform: translateY(0); }
   .projects__item--subButton {
     text-align: center;
     padding: 1rem;
@@ -246,11 +258,15 @@ strong {
     font-size: 3rem;
     position: absolute;
     bottom: 3rem;
-    left: 3rem; }
+    left: 3rem;
+    transition: all 0.4s; }
   .projects__item--deprecated {
     background-color: #333948;
     color: #838383;
     cursor: no-drop; }
+    .projects__item--deprecated:hover {
+      box-shadow: none;
+      transform: translateY(0rem); }
   .projects__item h3 {
     font-weight: 500;
     font-size: 4rem; }
@@ -269,14 +285,16 @@ strong {
     margin-top: auto; }
   .header__home h1 {
     line-height: 101%;
-    font-size: 10rem;
-    margin-left: -1rem;
-    position: absolute;
-    bottom: 5vw;
-    left: 5vw; }
+    font-size: 9rem;
+    margin-left: -1rem; }
   .header__home p {
     font-size: 3.5rem;
     width: 60%; }
+
+.header__textContainer {
+  position: absolute;
+  bottom: 5vw;
+  left: 5vw; }
 
 .header__circle {
   height: 50vw;
@@ -318,7 +336,7 @@ strong {
     .header__navLinks a i {
       font-size: 3rem; }
     .header__navLinks a:hover {
-      background-color: var(--primary-blue); }
+      background-color: #ffffff50; }
 
 footer {
   border-top: 1px solid #5a5c77;
@@ -340,3 +358,49 @@ footer {
   font-size: 1.5rem; }
   .footer__item a:hover {
     text-decoration: underline; }
+
+.response {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 4rem;
+  z-index: 2; }
+  .response h1 {
+    font-weight: 600;
+    font-size: 6rem; }
+  .response p {
+    font-size: 2.3rem; }
+  .response button {
+    width: 20%;
+    padding: 2rem;
+    border-radius: 10rem;
+    margin-left: auto;
+    background-color: var(--primary-blue);
+    color: #fff;
+    border: none;
+    font-family: "Poppins", "Noto Sans Thai", sans-serif;
+    font-size: 2rem; }
+  .response__inputs {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    gap: 2rem; }
+    .response__inputs input {
+      padding: 2.5rem;
+      border-radius: 3rem;
+      background-color: var(--light-1);
+      border: none;
+      font-size: 2rem;
+      font-family: "Poppins", "Noto Sans Thai", sans-serif;
+      color: #fff;
+      font-weight: 500; }
+    .response__inputs textarea {
+      padding: 2.5rem;
+      border-radius: 3rem;
+      background-color: var(--light-1);
+      border: none;
+      font-size: 2rem;
+      height: 30vh;
+      font-family: "Poppins", "Noto Sans Thai", sans-serif;
+      resize: none;
+      color: #fff; }
