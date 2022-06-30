@@ -38,6 +38,12 @@ body {
     flex-direction: column;
     gap: 2rem;
     padding: 5rem 5vw 0 5vw;
+    overflow: hidden;
+
+    @include respond(phone) {
+      padding: 5vh 3rem 3rem 3rem;
+      gap: 7rem;
+    }
   }
 
   &__response {

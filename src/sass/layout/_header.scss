@@ -1,13 +1,13 @@
 .header {
   &__home {
-    height: 80vh;
+    height: 90vh;
     background-color: var(--light-1);
-    border-radius: 0 0 3rem 3rem;
     // margin: 2vw 4vw 0 4vw;
-    padding: 4vw;
+    padding: 3vw;
     display: flex;
     overflow: hidden;
     position: relative;
+    transition: all 0.3s;
 
     &--text {
       margin-top: auto;
@@ -45,7 +45,7 @@
     position: absolute;
     top: 5rem;
     left: 3vw;
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 700;
     line-height: 101%;
   }
@@ -62,7 +62,28 @@
     right: 3vw;
     gap: 1rem;
 
-    a {
+    a,
+    &__link {
+      color: #fff;
+      font-size: 2rem;
+      text-decoration: none;
+      border-radius: 10rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: all 0.2s;
+      padding: 2rem;
+
+      i {
+        font-size: 2.5rem;
+      }
+
+      &:hover {
+        background-color: #ffffff50;
+      }
+    }
+
+    &__themeSwitcher {
       color: #fff;
       font-size: 2rem;
       text-decoration: none;
@@ -75,6 +96,10 @@
 
       i {
         font-size: 3rem;
+      }
+
+      &:active {
+        transform: scale(0.8);
       }
 
       &:hover {

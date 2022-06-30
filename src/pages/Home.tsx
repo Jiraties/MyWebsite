@@ -1,6 +1,7 @@
 import Modal from "@mui/material/Modal";
 import Clock from "../components/Clock";
 import { useRef, useState } from "react";
+import Response from "./Response";
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -28,16 +29,19 @@ const Home = () => {
     image: "",
     customComponent: <></>,
   });
+  const [theme, setTheme] = useState(
+    document.documentElement.getAttribute("data-theme") || "dark"
+  );
   const headerTextVariants = {
     hidden: { x: "-5vw", opacity: 0 },
     visible: { x: 0, opacity: 1 },
   };
   const navLinksArray = [
-    {
-      name: "Leave a Response",
-      to: "/response",
-      icon: "bxs-message-square-dots",
-    },
+    // {
+    //   name: "Leave a Response",
+    //   to: "/response",
+    //   icon: "bxs-message-square-dots",
+    // },
     { name: "Posts", to: "/posts", icon: "bxs-news" },
   ];
 
@@ -66,17 +70,19 @@ const Home = () => {
         </div>
       </Modal>
       <header className="header__home">
-        <motion.div
+        <motion.a
           initial={{ y: "5vh", opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
             duration: 1,
             ease: "anticipate",
           }}
-          className="header__logo"
+          href="#"
+          key={theme + 5}
+          className="header__logo u-remove-a-eff"
         >
           Jirat <br /> Chutrakul<span className="dot">.</span>{" "}
-        </motion.div>
+        </motion.a>
         <motion.div
           initial={{ height: 0, width: 0 }}
           animate={{ height: "50vw", width: "50vw" }}
@@ -84,7 +90,32 @@ const Home = () => {
           className="header__circle"
         ></motion.div>
         <div className="header__navLinks">
+          <motion.div
+            initial={{ y: "-5vh", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 1,
+              ease: "anticipate",
+              delay: navLinksArray.length * 0.1 + 0.5,
+            }}
+          >
+            <div
+              className="header__navLinks__link"
+              onClick={() => {
+                setModalIsOpen(true);
+                setModalInfo({
+                  title: "",
+                  text: "",
+                  image: "",
+                  customComponent: <Response />,
+                });
+              }}
+            >
+              <i className={`bx bxs-message-square-dots`}></i> Leave a Response
+            </div>
+          </motion.div>
           {navLinksArray.map((link, index) => {
+            console.log(index * 0.1 + 0.5);
             return (
               <motion.div
                 initial={{ y: "-5vh", opacity: 0 }}
@@ -101,12 +132,42 @@ const Home = () => {
               </motion.div>
             );
           })}
+          <motion.div
+            initial={{ y: "-5vh", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 1,
+              ease: "anticipate",
+              delay: 0.4,
+            }}
+          >
+            <div
+              className="header__navLinks__themeSwitcher"
+              onClick={() => {
+                if (
+                  document.documentElement.getAttribute("data-theme") === "dark"
+                ) {
+                  setTheme("light");
+                  document.documentElement.setAttribute("data-theme", "light");
+                } else {
+                  setTheme("dark");
+                  document.documentElement.setAttribute("data-theme", "dark");
+                }
+              }}
+            >
+              <i
+                style={{ transition: "all .2s" }}
+                className={`bx bxs-${theme === "light" ? "sun" : "moon"}`}
+              ></i>
+            </div>
+          </motion.div>
         </div>
         <div className="header__textContainer">
           <motion.h1
             variants={headerTextVariants}
             initial="hidden"
             animate="visible"
+            key={theme}
             transition={{
               duration: 1,
               ease: "anticipate",
@@ -118,6 +179,7 @@ const Home = () => {
             variants={headerTextVariants}
             initial="hidden"
             animate="visible"
+            key={theme + 1}
             transition={{
               duration: 1,
               ease: "anticipate",
@@ -130,6 +192,7 @@ const Home = () => {
             variants={headerTextVariants}
             initial="hidden"
             animate="visible"
+            key={theme + 2}
             transition={{
               duration: 1,
               ease: "anticipate",
@@ -142,6 +205,7 @@ const Home = () => {
             variants={headerTextVariants}
             initial="hidden"
             animate="visible"
+            key={theme + 3}
             transition={{
               duration: 1,
               ease: "anticipate",
@@ -213,54 +277,78 @@ const Home = () => {
           </h1>
           <p>These projects are projects i’ve worked on</p>
           <div className="projects__container">
-            <div className="projects__item">
-              <h3>
-                Timetables<span className="dot">.</span>
-                <p>
-                  Timetables is a web-based timetables program for a Simple,
-                  Customizable and Practical experience. Instead of needing to
-                  trace your finger on the timebar in your physical timetable,
-                  in Timetables simply just look at At a Glance and you
-                  instantly glimpse the current period and the following period.
-                </p>
-              </h3>
-              <a
-                href="https://github.com/SS-Developers/Timetables"
-                target="_blank"
-                className="u-remove-a-eff projects__item--subButton"
-              >
-                <i className="bx bxl-github"></i>
-              </a>
-              <a
-                className="u-remove-a-eff projects__item--mainButton"
-                href="https://timetables.ssdevelopers.xyz"
-              >
-                Let's go
-              </a>
-            </div>
+            <div className="projects__flexContainer">
+              <div className="projects__item">
+                <h3>
+                  Timetables<span className="dot">.</span>
+                  <p>
+                    Timetables is a web-based timetables program for a Simple,
+                    Customizable and Practical experience. Instead of needing to
+                    trace your finger on the timebar in your physical timetable,
+                    in Timetables simply just look at At a Glance and you
+                    instantly glimpse the current period and the following
+                    period.
+                  </p>
+                </h3>
+                <a
+                  href="https://github.com/SS-Developers/Timetables"
+                  target="_blank"
+                  className="u-remove-a-eff projects__item--subButton"
+                >
+                  <i className="bx bxl-github"></i>
+                </a>
+                <a
+                  className="u-remove-a-eff projects__item--mainButton"
+                  href="https://timetables.ssdevelopers.xyz"
+                >
+                  Let's go
+                </a>
+              </div>
 
-            <div className="projects__item">
-              <h3>
-                System13<span className="dot">.</span>
-                <p>
-                  System13 is a web-application for doing manual Valorant fair
-                  team matchmaking. Using is as easy as inputting team member
-                  names.
-                </p>
-              </h3>
-              <a
-                target="_blank"
-                href="https://github.com/SS-Developers/System13"
-                className="u-remove-a-eff projects__item--subButton"
-              >
-                <i className="bx bxl-github"></i>
-              </a>
-              <a className="u-remove-a-eff projects__item--mainButton  projects__item--deprecated">
-                Deprecated
-              </a>
+              <div className="projects__item">
+                <h3>
+                  System13<span className="dot">.</span>
+                  <p>
+                    System13 is a web-application for doing manual Valorant fair
+                    team matchmaking. Using is as easy as inputting team member
+                    names.
+                  </p>
+                </h3>
+                <a
+                  target="_blank"
+                  href="https://github.com/SS-Developers/System13"
+                  className="u-remove-a-eff projects__item--subButton"
+                >
+                  <i className="bx bxl-github"></i>
+                </a>
+                <a className="u-remove-a-eff projects__item--mainButton  projects__item--deprecated">
+                  Deprecated
+                </a>
+              </div>
             </div>
           </div>
         </section>
+
+        {/* <section className="stack">
+          <div>
+            <h1>
+              Web Tech Stack<span className="dot">.</span>
+            </h1>
+            <p>
+              In web development projects I use typescript react with redux as
+              my state management system. For mobile / cross platform
+              development I prefer flutter as my framework
+            </p>
+          </div>
+          <div className="stack__grid">
+            <div className="stack__gridItem react">
+              <h3>ReactJS</h3>
+            </div>
+            <div className="stack__gridItem"></div>
+            <div className="stack__gridItem"></div>
+            <div className="stack__gridItem"></div>
+          </div>
+        </section> */}
 
         <section className="technologies">
           <h1>
@@ -312,10 +400,27 @@ const Home = () => {
             Catch up on what <br />
             i’m working on<span className="dot">.</span>
           </h1>
-          <p>
-            The main frameworks and languages i use as a developers in general
-          </p>
+          <p>Read my latest posts</p>
           <div className="featuredPosts__container">
+            <div
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                zIndex: "2",
+                transform: "translate(-50%, -50%)",
+                backgroundColor: "var(--light-1)",
+                borderRadius: "3rem",
+                padding: "3rem",
+                boxShadow: "0 0 4.5rem rgba(0, 0, 0, 0.1)",
+                height: "13rem",
+              }}
+            >
+              <h3 style={{ lineHeight: "auto", fontWeight: "600" }}>
+                Posts are still on the way
+              </h3>
+              <p>I'm still learning backend to make posts myself</p>
+            </div>
             <div className="featuredPosts__item">
               <h3>
                 Working in redesigning this website

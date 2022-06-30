@@ -1,0 +1,26 @@
+.stack {
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: 1fr 2fr;
+  height: 45rem;
+
+  &__grid {
+    gap: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "react react redux typescript"
+      "react react router typescript";
+  }
+
+  &__gridItem {
+    background-color: var(--light-1);
+    border-radius: 3rem;
+    padding: 3rem;
+  }
+}
+
+.react {
+  grid-area: react;
+}

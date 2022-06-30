@@ -1,9 +1,45 @@
 .projects {
   &__container {
+    @include respond(phone) {
+      margin: 0 -3rem 0 -3rem;
+      overflow-x: scroll;
+      background: none;
+      margin-top: 3rem;
+
+      &::-webkit-scrollbar-corner {
+        border-radius: 1.1rem;
+      }
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 1.1rem;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+    }
+  }
+
+  &__flexContainer {
     display: flex;
     gap: 2rem;
     margin-top: 2rem;
     margin-bottom: 10rem;
+    width: fit-content;
+
+    @include respond(phone) {
+      padding: 0 3rem 0 3rem;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
 
   &__item {
@@ -13,6 +49,12 @@
     height: 35rem;
     width: 70rem;
     position: relative;
+    box-shadow: 0 0 4.5rem rgba(0, 0, 0, 0.1);
+
+    @include respond(phone) {
+      height: 50vh;
+      width: 85vw !important;
+    }
 
     &--mainButton {
       display: grid;
@@ -27,6 +69,7 @@
       bottom: 3rem;
       right: 3rem;
       transition: all 0.4s;
+      color: #fff;
 
       &:hover {
         box-shadow: 0 0 2rem var(--primary-blue);
@@ -71,7 +114,8 @@
     }
 
     p {
-      color: #dbdbdb;
+      // color: #dbdbdb;
+      color: var(--light-text);
     }
   }
 }
