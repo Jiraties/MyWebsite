@@ -24,12 +24,27 @@ const Posts = () => {
   return (
     <main className="main__posts">
       <header className="posts__header">
-        <div className="posts__header--title">
+        <motion.div
+          initial={{ opacity: 0, y: "5rem" }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{ duration: 1, ease: "anticipate" }}
+          className="posts__header--title"
+        >
           <h1>Posts</h1>
           <p>{postFilter === "MSTV" ? "most Viewed" : "newest"}</p>
-        </div>
+        </motion.div>
         <div className="posts__header--chips">
-          <div
+          <motion.div
+            initial={{ y: "-5vh", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 1,
+              ease: "anticipate",
+              delay: 0.3,
+            }}
             className={`${
               postFilter === "MSTV"
                 ? "posts__header--chip posts__header--activeChip"
@@ -38,8 +53,15 @@ const Posts = () => {
             onClick={() => setPostFilter("MSTV")}
           >
             Most Viewed
-          </div>
-          <div
+          </motion.div>
+          <motion.div
+            initial={{ y: "-5vh", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 1,
+              ease: "anticipate",
+              delay: 0.2,
+            }}
             className={`${
               postFilter === "NWST"
                 ? "posts__header--chip posts__header--activeChip"
@@ -48,17 +70,17 @@ const Posts = () => {
             onClick={() => setPostFilter("NWST")}
           >
             Newest
-          </div>
+          </motion.div>
         </div>
       </header>
       <section className="posts__content">
         {postsArray.map((post, index) => (
           <motion.div
-            key={postFilter}
-            initial={{ opacity: 0, x: "-10rem" }}
+            key={postFilter + index}
+            initial={{ opacity: 0, y: "10rem" }}
             animate={{
               opacity: 1,
-              x: 0,
+              y: 0,
               transition: {
                 duration: 0.9,
                 ease: "anticipate",

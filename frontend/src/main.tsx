@@ -6,12 +6,15 @@ import SimpleModal from "./lib/SimpleModal/SimpleModal";
 import { Provider } from "react-redux";
 import { store } from "./context/store";
 import { BrowserRouter } from "react-router-dom";
+import { MotionConfig } from "framer-motion";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <App />
+        <MotionConfig>
+          <App />
+        </MotionConfig>
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,

@@ -237,7 +237,8 @@ const Home = () => {
                   setModalInfo({
                     title: "Bangkok, Thailand",
                     text: "Bangkok, Thailand’s capital, is a large city known for ornate shrines and vibrant street life. The boat-filled Chao Phraya River feeds its network of canals, flowing past the Rattanakosin royal district, home to opulent Grand Palace and its sacred Wat Phra Kaew Temple. Nearby is Wat Pho Temple with an enormous reclining Buddha and, on the opposite shore, Wat Arun Temple with its steep steps and Khmer-style spire.",
-                    image: "https://i.ibb.co/k0L8mzz/IMG-1141.jpg",
+                    image:
+                      "https://a.cdn-hotels.com/gdcs/production168/d707/c3156d7b-ce5a-4a5c-9a99-002b0ff57fe8.jpg",
                   });
                 }}
               >
@@ -402,7 +403,7 @@ const Home = () => {
           </h1>
           <p>Read my latest posts</p>
           <div className="featuredPosts__container">
-            <div
+            {/* <div
               style={{
                 position: "absolute",
                 top: "50%",
@@ -420,7 +421,7 @@ const Home = () => {
                 Posts are still on the way
               </h3>
               <p>I'm still learning backend to make posts myself</p>
-            </div>
+            </div> */}
             <div className="featuredPosts__item">
               <h3>
                 Working in redesigning this website
