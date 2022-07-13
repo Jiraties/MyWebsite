@@ -12,7 +12,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <MotionConfig>
+        <MotionConfig reducedMotion="user">
           <App />
         </MotionConfig>
       </BrowserRouter>

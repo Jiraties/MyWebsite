@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -20,6 +20,10 @@ const Posts = () => {
     { title: "Learning Backend", body: "This is the body of the post" },
     { title: "Learning Backend", body: "This is the body of the post" },
   ];
+
+  useEffect(() => {
+    document.title = "Jirat Chutrakul | Posts";
+  });
 
   return (
     <main className="main__posts">

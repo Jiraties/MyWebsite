@@ -1,10 +1,12 @@
 import Modal from "@mui/material/Modal";
 import Clock from "../components/Clock";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Response from "./Response";
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import i18n from "i18next";
+import { initReactI18next, useTranslation } from "react-i18next";
 
 //@ts-ignore
 import Me3 from "../../assets/images/Me3.png";
@@ -12,6 +14,36 @@ import Me3 from "../../assets/images/Me3.png";
 import Me1 from "../../assets/images/Me1.png";
 //@ts-ignore
 import Me5 from "../../assets/images/Me5.png";
+
+const translationEn = {
+  title1: "Making",
+  title2: "everyday a bit",
+  title3: "better by",
+  title4: "developing",
+  headerParagraph:
+    " Hi there i’m Jirat! Glad you visited my website. Scroll down and get a tour of my profile",
+};
+const translationTh = {
+  title1: "ทุกวัน",
+  title2: "ดีขึ้นได้",
+  title3: "ด้วยการ",
+  title4: "เขียนโปรแกรม",
+  headerParagraph:
+    "ว่าไง! ยินดีต้อนรับสู่เว็บไซต์ของผม เลื่อนลงและมาดูผลงานของผม ",
+};
+
+i18n.use(initReactI18next).init({
+  resources: {
+    en: {
+      translation: translationEn,
+    },
+    th: {
+      translation: translationTh,
+    },
+  },
+  lng: "en",
+  fallbackLng: "en",
+});
 
 interface modalInfoType {
   title: string;
@@ -32,10 +64,8 @@ const Home = () => {
   const [theme, setTheme] = useState(
     document.documentElement.getAttribute("data-theme") || "dark"
   );
-  const headerTextVariants = {
-    hidden: { x: "-5vw", opacity: 0 },
-    visible: { x: 0, opacity: 1 },
-  };
+  const { t } = useTranslation();
+
   const navLinksArray = [
     // {
     //   name: "Leave a Response",
@@ -44,6 +74,10 @@ const Home = () => {
     // },
     { name: "Posts", to: "/posts", icon: "bxs-news" },
   ];
+
+  useEffect(() => {
+    document.title = "Jirat Chutrakul | Home";
+  });
 
   return (
     <>
@@ -78,7 +112,6 @@ const Home = () => {
             ease: "anticipate",
           }}
           href="#"
-          key={theme + 5}
           className="header__logo u-remove-a-eff"
         >
           Jirat <br /> Chutrakul<span className="dot">.</span>{" "}
@@ -89,6 +122,20 @@ const Home = () => {
           transition={{ duration: 1.2, ease: "anticipate" }}
           className="header__circle"
         ></motion.div>
+        <motion.div
+          initial={{ height: 0, width: 0 }}
+          animate={{ height: "30vw", width: "30vw" }}
+          transition={{ duration: 1.2, ease: "anticipate" }}
+          className="header__circle2"
+        >
+          <motion.img
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2, ease: "anticipate", delay: 0.4 }}
+            src="https://media.discordapp.net/attachments/854643706128105483/995727776164356106/IMG_1392.png"
+            alt=""
+          />
+        </motion.div>
         <div className="header__navLinks">
           <motion.div
             initial={{ y: "-5vh", opacity: 0 }}
@@ -164,21 +211,8 @@ const Home = () => {
         </div>
         <div className="header__textContainer">
           <motion.h1
-            variants={headerTextVariants}
-            initial="hidden"
-            animate="visible"
-            key={theme}
-            transition={{
-              duration: 1,
-              ease: "anticipate",
-            }}
-          >
-            Making
-          </motion.h1>
-          <motion.h1
-            variants={headerTextVariants}
-            initial="hidden"
-            animate="visible"
+            initial={{ y: "10vw", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             key={theme + 1}
             transition={{
               duration: 1,
@@ -186,12 +220,12 @@ const Home = () => {
               delay: 0.1,
             }}
           >
-            everyday a bit
+            {t("title1")} <br /> {t("title2")} <br /> {t("title3")} <br />{" "}
+            <span className="dot"> {t("title4")}</span>
           </motion.h1>
-          <motion.h1
-            variants={headerTextVariants}
-            initial="hidden"
-            animate="visible"
+          <motion.p
+            initial={{ y: "10vw", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             key={theme + 2}
             transition={{
               duration: 1,
@@ -199,9 +233,30 @@ const Home = () => {
               delay: 0.2,
             }}
           >
-            better by
-          </motion.h1>
-          <motion.h1
+            {t("headerParagraph")}
+          </motion.p>
+          <motion.div
+            initial={{ y: "10vw", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 1,
+              ease: "anticipate",
+              delay: 0.3,
+            }}
+            key={theme + 3}
+            onClick={() =>
+              window.scroll({
+                top: 600,
+                left: 100,
+                behavior: "smooth",
+              })
+            }
+          >
+            <i className="bx bx-right-arrow-alt"></i>
+            <p>take me there</p>
+          </motion.div>
+
+          {/* <motion.h1
             variants={headerTextVariants}
             initial="hidden"
             animate="visible"
@@ -213,7 +268,7 @@ const Home = () => {
             }}
           >
             <span className="dot">developing</span>
-          </motion.h1>
+          </motion.h1> */}
         </div>
       </header>
       <main className="main__home">
