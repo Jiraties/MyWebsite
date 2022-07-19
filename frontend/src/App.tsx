@@ -1,3 +1,5 @@
+import axios from "axios";
+import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Posts from "./pages/Posts";
@@ -18,6 +20,10 @@ function App() {
 
   //   return () => clearInterval(imageRandomizerInterval);
   // }, []);
+
+  useEffect(() => {
+    axios.get("localhost:3001/getPostsListing").then(res => console.log(res));
+  });
 
   return (
     <>
