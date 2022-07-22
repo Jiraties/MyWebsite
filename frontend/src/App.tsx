@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Post from "./pages/Post";
 import Posts from "./pages/Posts";
 import Response from "./pages/Response";
 import "./sass/main.css";
@@ -21,16 +22,13 @@ function App() {
   //   return () => clearInterval(imageRandomizerInterval);
   // }, []);
 
-  useEffect(() => {
-    axios.get("localhost:3001/getPostsListing").then(res => console.log(res));
-  });
-
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/response" element={<Response />} />
         <Route path="/posts" element={<Posts />} />
+        <Route path="/post/:id" element={<Post />} />
       </Routes>
     </>
   );

@@ -1,15 +1,43 @@
 import { RequestHandler } from "express";
-import { v4 as uuid } from "uuid";
+import Post from "../models/Post";
 
-const testingArray = ["this", "is", "an", "array"];
+export const getPosts: RequestHandler = async (req, res, next) => {
+  try {
+    const allPosts = await Post.find();
 
-export const getPostsListing: RequestHandler = (req, res) => {
-  res.json(testingArray);
+    res.json({ posts: [...allPosts] });
+  } catch (err) {
+    next(err);
+  }
 };
 
-export const newPost: RequestHandler = (req, res) => {
-  const { title, markdown } = req.body;
-  console.log(title, markdown);
+export const getPostById: RequestHandler = async (req, res, next) => {
+  try {
+    const matchingPost = await Post.findById(req.params.id);
+    matchingPost.views++;
+    const result = await matchingPost.save();
 
-  res.json({ body: `Created your new post titled "${title}"` });
+    res.json(result);
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const newPost: RequestHandler = async (req, res, next) => {
+  try {
+    const { title, markdown, summary } = req.body;
+
+    const post = await new Post({
+      title,
+      markdown,
+      summary,
+    });
+    const createdPost = await post.save();
+
+    res.status(200).json({
+      createdPost,
+    });
+  } catch (err) {
+    next(err);
+  }
 };

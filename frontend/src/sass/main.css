@@ -88,6 +88,9 @@ body {
   place-items: center;
   height: 100vh; }
 
+.main__post {
+  padding: 5rem 5vw 0 5vw; }
+
 h1 {
   color: var(--font);
   font-size: 4.5rem; }
@@ -384,6 +387,16 @@ strong {
   .projects__item p {
     color: var(--light-text); }
 
+.markdown h1 {
+  margin-bottom: 2rem; }
+
+.markdown p {
+  margin-bottom: 3rem;
+  font-size: 1.9rem; }
+
+.markdown a {
+  color: var(--primary-blue); }
+
 .header__home {
   height: 90vh;
   background-color: var(--light-1);
@@ -572,6 +585,23 @@ footer {
     font-size: 25rem;
     color: var(--light-2);
     opacity: 0; }
+
+.post__header {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--light-2); }
+  .post__header a {
+    color: var(--font);
+    text-decoration: none;
+    font-size: 2rem;
+    margin-bottom: 3rem; }
+    .post__header a:hover {
+      text-decoration: underline; }
+  .post__header h1 {
+    font-size: 5.5rem;
+    width: 40%;
+    line-height: 130%;
+    margin-top: 3rem; }
 
 .response {
   display: flex;

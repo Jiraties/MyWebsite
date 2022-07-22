@@ -1,0 +1,25 @@
+.post {
+  &__header {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--light-2);
+
+    a {
+      color: var(--font);
+      text-decoration: none;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    h1 {
+      font-size: 5.5rem;
+      width: 40%;
+      line-height: 130%;
+      margin-top: 3rem;
+    }
+  }
+}

@@ -1,29 +1,22 @@
+import axios from "axios";
+
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { post } from "../models/PostTypes";
 
 const Posts = () => {
   const [postFilter, setPostFilter] = useState("MSTV");
-
-  const postsArray = [
-    {
-      title: "Learning Backend",
-      body: "This is the body of the post",
-      icon: "bxs-data",
-    },
-    {
-      title: "The process of remaking this website",
-      body: "This is the body of the post",
-      icon: "bxs-component",
-    },
-    { title: "Learning Backend", body: "This is the body of the post" },
-    { title: "Learning Backend", body: "This is the body of the post" },
-    { title: "Learning Backend", body: "This is the body of the post" },
-  ];
+  const [posts, setPosts] = useState<post[]>([]);
 
   useEffect(() => {
     document.title = "Jirat Chutrakul | Posts";
-  });
+
+    axios.get("http://localhost:3001/getPosts").then(({ data }) => {
+      console.log(data);
+      setPosts(data.posts);
+    });
+  }, []);
 
   return (
     <main className="main__posts">
@@ -78,7 +71,7 @@ const Posts = () => {
         </div>
       </header>
       <section className="posts__content">
-        {postsArray.map((post, index) => (
+        {posts.map((post, index) => (
           <motion.div
             key={postFilter + index}
             initial={{ opacity: 0, y: "10rem" }}
@@ -97,14 +90,13 @@ const Posts = () => {
             }}
             className="posts__post"
           >
-            <Link to="/hello" className="u-remove-a-eff">
+            <Link to={`/post/${post._id}`} className="u-remove-a-eff">
               {" "}
               <h1>
                 {post.title}
                 <span className="dot">.</span>
               </h1>
-              <p>{post.body}</p>
-              <i className={`bx ${post.icon}`}></i>
+              <p>{post.summary}</p>
             </Link>
           </motion.div>
         ))}
