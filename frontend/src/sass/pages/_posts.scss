@@ -2,6 +2,7 @@
   &__header {
     display: flex;
     justify-content: space-between;
+    margin-top: 4rem;
 
     &--title {
       display: flex;
@@ -24,12 +25,12 @@
     }
 
     &--chip {
-      // transition: all 0.2s;
+      transition: all 0.2s;
       padding: 2rem;
       background-color: var(--light-1);
       border-radius: 10rem;
       cursor: pointer;
-      box-shadow: 0 0 4.5rem rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 4.5rem rgba(0, 0, 0, 0.05);
       font-size: 1.5rem;
 
       &:hover {
@@ -45,38 +46,56 @@
   }
 
   &__content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 3rem;
     margin-top: 3rem;
+    min-height: 70vh;
   }
 
   &__post {
-    padding: 3rem;
+    padding: 4rem;
     background-color: var(--light-1);
     border-radius: 3rem;
-    height: 40vh;
+    height: fit-content;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 4.5rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 4.5rem rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: flex-end;
+    transition: all 0.2s;
+    outline-offset: 1rem;
+    gap: 2rem;
+
+    &:hover {
+      background-color: var(--light-2);
+    }
+
+    &:hover > i {
+      color: var(--primary-blue);
+      transform: translateX(1rem) translateY(50%);
+    }
+
+    &:active {
+      outline: 2px solid #fff;
+    }
 
     // transition: all 0.2s;
 
     h1 {
-      font-size: 4rem;
-      font-weight: 600;
-      width: 70%;
+      font-size: 3rem;
+      font-weight: 700;
+      width: 30%;
       line-height: 130%;
     }
 
     i {
       position: absolute;
-      bottom: 2rem;
+      bottom: 50%;
+      transform: translateY(50%);
       transition: all 0.2s;
-      right: 2rem;
-      font-size: 25rem;
-      color: var(--light-2);
-      opacity: 0;
+      right: 4rem;
+      font-size: 4rem;
     }
 
     // &:hover {

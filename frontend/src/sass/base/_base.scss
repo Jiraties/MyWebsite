@@ -11,7 +11,7 @@ html {
   scroll-behavior: smooth;
 
   @include respond(big-desktop) {
-    font-size: 62.5%;
+    font-size: 60%;
   }
 
   @include respond(phone) {
@@ -47,7 +47,7 @@ body {
   }
 
   &__posts {
-    padding: 5rem 5vw 0 5vw;
+    padding: 5rem 10vw 0 10vw;
   }
 
   &__response {
@@ -57,6 +57,7 @@ body {
   }
 
   &__post {
-    padding: 5rem 5vw 0 5vw;
+    padding: 5rem 10vw 0 10vw;
+    min-height: 100vh;
   }
 }

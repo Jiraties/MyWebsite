@@ -1,10 +1,17 @@
 .markdown {
+  img {
+    border-radius: 1.1rem;
+    max-height: 30vh;
+    object-fit: cover;
+  }
+
   h1 {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    // font-weight: 600;
   }
 
   p {
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
     font-size: 1.9rem;
   }
 

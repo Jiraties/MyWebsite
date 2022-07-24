@@ -4,4 +4,5 @@ export interface post {
   markdown: string;
   summary: string;
   createdAt: string;
+  views: number;
 }

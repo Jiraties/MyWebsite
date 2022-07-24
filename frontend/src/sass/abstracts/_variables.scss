@@ -6,15 +6,17 @@ html[data-theme="dark"] {
   --background: #262732;
   --font: #fff;
   --light-text: #dadada;
+  --hr: #5a5c77;
 }
 
 html[data-theme="light"] {
   --primary-blue: #4f80ff;
-  --light-1: #e3e9f8;
-  --light-2: #c1c7d8;
-  --background: #dee2f1;
+  --light-1: #eeeeee;
+  --light-2: #e8eeff;
+  --background: #e9e9e9;
   --font: rgb(37, 37, 37);
   --light-text: #474747;
+  --hr: #5a5c77;
 }
 
 :root {
@@ -25,6 +27,7 @@ html[data-theme="light"] {
     --dark-1: #252633;
     --background: #262732;
     --font: #fff;
+    --hr: #5a5c77;
   }
 
   @media (prefers-color-scheme: light) {

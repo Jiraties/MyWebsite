@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { post } from "../models/PostTypes";
+import Footer from "../components/Footer";
 
 const Post = () => {
   const { id } = useParams();
@@ -20,9 +21,17 @@ const Post = () => {
   return (
     <main className="main__post">
       <div className="post__header">
-        <Link to="/posts">
-          <i className="bx bx-left-arrow-alt"></i>Back to Posts Listing
-        </Link>
+        {/* <Link to="/posts">
+          <i className="bx bx-left-arrow-alt"></i>
+          Back to Posts Listing
+        </Link> */}
+        <div className="history">
+          <Link to="/">Home</Link>
+          <i className="bx bx-chevron-right"></i>
+          <Link to="/posts">Posts</Link>
+          <i className="bx bx-chevron-right"></i>
+          <Link to="/">{post?.title}</Link>
+        </div>
         <h1>
           {post?.title}
           <span className="dot">.</span>
@@ -32,11 +41,13 @@ const Post = () => {
           {new Date(post?.createdAt).toLocaleString("en-GB", {
             dateStyle: "long",
           })}
+          , {post?.views} views
         </p>
       </div>
       <div className="post__markdown markdown">
         <ReactMarkdown children={post?.markdown ?? ""} />
       </div>
+      <Footer />
     </main>
   );
 };

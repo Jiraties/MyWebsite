@@ -1,0 +1,20 @@
+.navigation {
+  background-color: #26273260;
+  backdrop-filter: blur(2rem);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 10vh;
+  width: 100%;
+  z-index: 2;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--light-2);
+
+  h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 101%;
+  }
+}
