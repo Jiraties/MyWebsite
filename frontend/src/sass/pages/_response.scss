@@ -40,8 +40,9 @@
       border: none;
       font-size: 1.7rem;
       font-family: "Poppins", "Noto Sans Thai", sans-serif;
-      color: #fff;
+      color: var(--font);
       font-weight: 500;
+      transition: all 0.2s;
     }
 
     textarea {
@@ -53,7 +54,8 @@
       height: 30vh;
       font-family: "Poppins", "Noto Sans Thai", sans-serif;
       resize: none;
-      color: #fff;
+      color: var(--font);
+      transition: all 0.2s;
     }
   }
 }

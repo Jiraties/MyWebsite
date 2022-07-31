@@ -52,7 +52,7 @@ html[data-theme="light"] {
   box-sizing: inherit; }
 
 html {
-  font-size: 55%;
+  font-size: 50%;
   scroll-behavior: smooth; }
   @media only screen and (min-width: 112.5em) {
     html {
@@ -94,6 +94,17 @@ body {
 .main__post {
   padding: 5rem 10vw 0 10vw;
   min-height: 100vh; }
+
+@media only screen and (max-width: 56.25em) {
+  .app {
+    display: none; } }
+
+.app__unsupported {
+  display: none; }
+  @media only screen and (max-width: 56.25em) {
+    .app__unsupported {
+      display: block;
+      padding: 5rem 3rem 3rem 3rem; } }
 
 h1 {
   color: var(--font);
@@ -228,7 +239,9 @@ strong {
   height: 35rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
+  justify-content: space-between;
+  box-shadow: 0 0 4.5rem rgba(0, 0, 0, 0.2);
+  filter: blur(1rem); }
   .featuredPosts__item h3 {
     font-size: 4rem;
     font-weight: 600;
@@ -700,8 +713,9 @@ footer {
       border: none;
       font-size: 1.7rem;
       font-family: "Poppins", "Noto Sans Thai", sans-serif;
-      color: #fff;
-      font-weight: 500; }
+      color: var(--font);
+      font-weight: 500;
+      transition: all 0.2s; }
     .response__inputs textarea {
       padding: 2.5rem;
       border-radius: 2.5rem;
@@ -711,4 +725,5 @@ footer {
       height: 30vh;
       font-family: "Poppins", "Noto Sans Thai", sans-serif;
       resize: none;
-      color: #fff; }
+      color: var(--font);
+      transition: all 0.2s; }
