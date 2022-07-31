@@ -1,10 +1,8 @@
 import Modal from "@mui/material/Modal";
 import Clock from "../components/Clock";
 import { useEffect, useRef, useState } from "react";
-import Response from "./Response";
 
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import i18n from "i18next";
 import { initReactI18next, useTranslation } from "react-i18next";
 
@@ -74,7 +72,7 @@ const Home = () => {
     //   to: "/response",
     //   icon: "bxs-message-square-dots",
     // },
-    { name: "Posts", to: "/posts", icon: "bxs-news" },
+    // { name: "Posts", to: "/posts", icon: "bxs-news" },
   ];
 
   useEffect(() => {
@@ -160,10 +158,10 @@ const Home = () => {
                 });
               }}
             >
-              <i className={`bx bxs-message-square-dots`}></i> Leave a Response
+              <i className={`bx bxs-message-square-dots`}></i> Leave feedback
             </div>
           </motion.div>
-          {navLinksArray.map((link, index) => {
+          {/* {navLinksArray.map((link, index) => {
             console.log(index * 0.1 + 0.5);
             return (
               <motion.div
@@ -180,7 +178,7 @@ const Home = () => {
                 </Link>
               </motion.div>
             );
-          })}
+          })} */}
           <motion.div
             initial={{ y: "-5vh", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -460,7 +458,7 @@ const Home = () => {
           </h1>
           <p>Read my latest posts</p>
           <div className="featuredPosts__container">
-            {/* <div
+            <div
               style={{
                 position: "absolute",
                 top: "50%",
@@ -478,7 +476,7 @@ const Home = () => {
                 Posts are still on the way
               </h3>
               <p>I'm still learning backend to make posts myself</p>
-            </div> */}
+            </div>
             <div className="featuredPosts__item">
               <h3>
                 Working in redesigning this website
