@@ -1,16 +1,14 @@
 import Modal from "@mui/material/Modal";
 import Clock from "../components/Clock";
-import { useEffect, useRef, useState } from "react";
+import Response from "./Response";
+import i18n from "i18next";
 
 import { motion } from "framer-motion";
-import i18n from "i18next";
+import { useEffect, useRef, useState } from "react";
 import { initReactI18next, useTranslation } from "react-i18next";
 
-//@ts-ignore
 import Me3 from "../../assets/images/Me3.png";
-//@ts-ignore
 import Me1 from "../../assets/images/Me1.png";
-//@ts-ignore
 import Me5 from "../../assets/images/Me5.png";
 import Footer from "../components/Footer";
 import Navigation from "../components/Navigation";
